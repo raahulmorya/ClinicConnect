@@ -1,17 +1,12 @@
 import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import TotalPatient from "./TotalPatient";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import TotalPatient from "./components/TotalPatient";
 
 const Services = () => {
   return (
     <div>
-      <Header
-        showHome={true}
-        showServices={true}
-        showAboutUs={true}
-        showLogin={true}
-      />
+      <Header/>
       <h1 style={{ textAlign: "center", marginTop: "120px" }}>Services</h1>
       <TotalPatient />
       <Footer />

@@ -5,7 +5,6 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const bcrypt = require('bcryptjs'); // Add bcryptjs for password hashing
 const jwt = require("jsonwebtoken");
-const { verifyToken, isReceptionist } = require("./middleware/auth");
 
 
 const app = express();

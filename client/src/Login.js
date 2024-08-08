@@ -2,16 +2,15 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Header from "./Header";
-import Footer from "./Footer";
-import "./login.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import "./css/login.css";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("doctor");
-   const [error, setError] = useState("");
-
+  const [error, setError] = useState("");  
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -23,7 +22,6 @@ const Login = () => {
         role,
       });
 
-      
       if (response.data.user) {
         localStorage.setItem("token", response.data.token); // Store the token
         navigate(`/user/${response.data.user.username}`);
@@ -39,7 +37,6 @@ const Login = () => {
   return (
     <div class="full_height">
       <Header />
-
       <div id="login_div">
         <div id="login_console">
           <h1>LOGIN</h1>
@@ -84,7 +81,7 @@ const Login = () => {
           <p>Don't have an account? Contact Admin</p>
         </div>
       </div>
-      <Footer />
+     <Footer />
     </div>
   );
 };

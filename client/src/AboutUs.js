@@ -1,21 +1,15 @@
 import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import "./style.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import "./css/style.css";
 
 const AboutUs = () => {
   return (
     <div id="gradient-background">
-      <Header
-        showHome={true}
-        showServices={true}
-        showAboutUs={true}
-        showLogin={true}
-      />
+      <Header/>
       <div class="center-row">
         <div class="about-us center-column">
           <h2>About Us</h2>
-
           <p>
             ClinicConnect was founded with the vision of transforming the way
             clinics operate. Our journey began with a simple goal: to empower

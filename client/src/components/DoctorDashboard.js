@@ -51,8 +51,8 @@ const DoctorDashboard = () => {
   };
 
   return (
-    <div>
-      <div id='search' className='center-column small-padding small-width'> 
+    <div className='auto-width'>
+      <div id='search' className='center-column small-width'> 
       <form className='background center-row' onSubmit={handleSearch}>
         <label>Enter Patient ID:</label>
         <input type="text" value={patientId} onChange={handleInputChange} />
@@ -61,12 +61,12 @@ const DoctorDashboard = () => {
       {patient && (
         <div className="background center-column">
           <h3>Patient Details</h3>
-          <p>Name: {patient.name}</p>
-          <p>Age: {patient.age}</p>
-          <p>Gender: {patient.gender}</p>
-          <p>Address: {patient.address}</p>
-          <p>Symptoms: {patient.symptoms}</p>
-          <p>Prescriptions:</p>
+          <p><strong>Name:</strong> {patient.name}</p>
+          <p><strong>Age:</strong> {patient.age}</p>
+          <p><strong>Gender:</strong> {patient.gender}</p>
+          <p><strong>Address:</strong> {patient.address}</p>
+          <p><strong>Symptoms:</strong> {patient.symptoms}</p>
+          <p><strong>Prescriptions:</strong></p>
           <ul>
             {patient.prescriptions.map((prescription, index) => (
               <li key={index}>{prescription}</li>

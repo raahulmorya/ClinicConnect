@@ -6,7 +6,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import PatientForm from "./components/PatientForm";
 import DoctorDashboard from "./components/DoctorDashboard";
 import PatientList from "./components/PatientList";
-import "./userpage.css";
+import Register from "./components/Register";
+import "./css/userpage.css";
 
 const UserPage = () => {
   const { username } = useParams();
@@ -16,6 +17,7 @@ const UserPage = () => {
   const [isreceptionist, setIsReceptionist] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [register, setRegisterIt] = useState(false);
 
   useEffect(() => {
     const fetchUserDetails = async () => {
@@ -73,6 +75,8 @@ const UserPage = () => {
   if (!userDetails) {
     return <div>User not found</div>;
   }
+  const registerIt = () => {
+ setRegisterIt((prevState) => !prevState);  }
 
   return (
     <div id="userpage">
@@ -90,7 +94,7 @@ const UserPage = () => {
         </ul>
         {isdoctor && (
           <ul>
-            <a href="/Register">Register User</a>
+            <button onClick={registerIt}>Register User</button>
           </ul>
         )}
         <button onClick={handleLogout}>Logout</button>
@@ -99,8 +103,9 @@ const UserPage = () => {
       {isreceptionist && <h1>Receptionist Dashboard</h1>}
       <div className="center-row ">
         {isdoctor && (
-          <div className="center-row">
+          <div className="dash-component">
             <PatientList />
+            {register && <Register />}
             <DoctorDashboard />
           </div>
         )}

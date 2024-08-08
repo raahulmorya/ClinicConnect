@@ -57,8 +57,11 @@ img{
 #patient  img{
     height: 250px;
 }
-#search img{
+#searchs img{
     height: 250px;
+}
+#searchs{
+    width: 400px;
 }
 #tips  img{
     height: 250px;

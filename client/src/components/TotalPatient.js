@@ -6,10 +6,10 @@ const TotalPatient = () => {
       <div class="center-row padding_small top_margin">
         <div id="patient" class="center-column square">
           <img src="./hospitalisation.png" alt="" />
-          Total Patient visited 46
+          Total Patient visited : 46
         </div>
 
-        <div id="search" class="center-column white_border square">
+        <div id="searchs" class="center-column white_border square">
           <img src="./search.png" alt="" />
           Search Health records
         </div>
