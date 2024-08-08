@@ -1,0 +1,77 @@
+
+.square{
+    height:400px;
+    width:400px;
+}
+
+.square_small{
+    height:200px;
+    width:200px;
+}
+
+.full_height{
+    height : 100%;
+}
+
+.top_margin{
+    margin-top: 40px;
+}
+
+.padding_small{
+   padding: 30px;
+   gap: 30px;
+}
+
+.quick-item {
+     border:solid 5px white;
+    background-color: rgba(255, 255, 255, 0.533);
+    border-radius: 10px;
+    /* padding: 20px; */
+    text-align: center;
+    font-size: 1.5rem;
+    border: 2px solid #fff;
+    width:30%;
+   
+}
+
+.small_width{
+    width:50%;
+
+}
+#patient {
+    font-size: 30px;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.69);
+    border:solid 5px white;    
+    border-radius: 10px;
+    
+}
+
+img{
+    height: 20px;
+}
+#logo{
+    height: 100px;
+}
+
+#patient  img{
+    height: 250px;
+}
+#search img{
+    height: 250px;
+}
+#tips  img{
+    height: 250px;
+}
+
+.white_border{
+     background-color: rgba(255, 255, 255, 0.69);
+    border:solid 5px white;    
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#tips{
+
+}
