@@ -7,6 +7,8 @@ ClinicConnect is a clinic management system built with React. It features a logi
 
 The app provides an intuitive interface for managing a clinic's day-to-day operations.
 
+**Deplyed on vercel** : https://clinic-connect.vercel.app/
+
 ## Features
 
 - **Doctor Login**: Doctors can log in to the system and access patient details, add prescriptions, and view patient history.
