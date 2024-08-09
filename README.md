@@ -19,31 +19,28 @@
 
 - Node.js and npm
 - MongoDB
-- 
+
  1. **Clone the repository:**
      ```bash
      git clone https://github.com/your-username/ClinicConnect.git
-     cd ClinicConnect```
+     cd ClinicConnect
+     ```
  2.**Install dependencies:**
     ```bash
     npm install
     ```
-    
- 3. **Set up environment variables**
+ 3.**Set up environment variables**
  Create a .env file in the root directory and add the following:
    ```env
    MONGODB_URI=your_mongodb_uri
    JWT_SECRET=your_jwt_secret
    ```
- 
-- **Start the development server:**
-    
+ 4.**Start the development server:**
    ```bash
     npm start
    ```
-    
-    The app will be available at http://localhost:3000.
 
+The app will be available at http://localhost:3000
 ##API Endpoints
      Create Patient: POST /api/patients
      Get Patient: GET /api/patients/:patientId
