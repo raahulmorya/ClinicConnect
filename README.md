@@ -28,12 +28,12 @@
     ```bash
     npm install
     ```
+    
  3. **Set up environment variables**
-
-   Create a .env file in the root directory and add the following:
+ Create a .env file in the root directory and add the following:
    ```env
    MONGODB_URI=your_mongodb_uri
-   JWT_SECRET=your_jwt_secret```
+   JWT_SECRET=your_jwt_secret
    ```
  
 - **Start the development server:**
@@ -43,16 +43,12 @@
    ```
     
     The app will be available at http://localhost:3000.
-  
-   ##API Endpoints
+
+##API Endpoints
      Create Patient: POST /api/patients
      Get Patient: GET /api/patients/:patientId
      Add Prescription: POST /api/patients/:patientId/prescription
-
-
-
-
-
+     
 ## Technology Stack
 
 - **Frontend**: React, React Router
