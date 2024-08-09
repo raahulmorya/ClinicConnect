@@ -222,7 +222,7 @@ app.get('/api/patients', async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-  seedData(); // Seed the database with dummy data
-});
+// Export handler function for Vercel
+module.exports = (req, res) => {
+  app(req, res);
+};
