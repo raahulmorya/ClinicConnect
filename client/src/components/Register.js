@@ -1,7 +1,7 @@
-const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 import React, { useState } from "react";
 import axios from "axios";
 import "../css/login.css";
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 
 const Register = () => {
   const [username, setUsername] = useState("");

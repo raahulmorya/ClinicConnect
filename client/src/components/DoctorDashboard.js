@@ -1,7 +1,7 @@
 // src/components/DoctorDashboard.js
-const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 import React, { useState } from 'react';
 import axios from 'axios';
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 
 const DoctorDashboard = () => {
   const [patientId, setPatientId] = useState('');

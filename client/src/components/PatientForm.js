@@ -1,8 +1,8 @@
 // src/components/PatientForm.js
-const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 import React, { useState } from "react";
 import axios from "axios";
 import "./PatientForm.css"; // Add your CSS file for styling
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 
 const PatientForm = () => {
   const [patient, setPatient] = useState({

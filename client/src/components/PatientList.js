@@ -1,6 +1,6 @@
-const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 
 const PatientList = () => {
   const [patients, setPatients] = useState([]);
