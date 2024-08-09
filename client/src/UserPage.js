@@ -1,28 +1,28 @@
-const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
-// import GenerateToken from "./GenerateToken";
 import PatientForm from "./components/PatientForm";
 import DoctorDashboard from "./components/DoctorDashboard";
 import PatientList from "./components/PatientList";
 import Register from "./components/Register";
 import "./css/userpage.css";
 
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
+
 const UserPage = () => {
   const { username } = useParams();
   const navigate = useNavigate();
-  const [userDetails, setUserDetails] = useState(0);
-  const [isdoctor, setIsDoctor] = useState(null);
-  const [isreceptionist, setIsReceptionist] = useState(null);
+  const [userDetails, setUserDetails] = useState(null);
+  const [isdoctor, setIsDoctor] = useState(false);
+  const [isreceptionist, setIsReceptionist] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [register, setRegisterIt] = useState(false);
 
   useEffect(() => {
     const fetchUserDetails = async () => {
-      const token = localStorage.getItem("token"); // Assuming token is stored in local storage
-      console.log(`${token}`);
+      const token = localStorage.getItem("token");
+
       try {
         const response = await axios.get(
           `${apiBaseUrl}/auth/user/${username}`,
@@ -42,19 +42,20 @@ const UserPage = () => {
         if (error.response && error.response.status === 403) {
           setError("Unauthorized access. Please login.");
         } else {
-          setError("Login to continue");
+          setError("Error fetching user details. Please login.");
         }
         navigate("/login");
       } finally {
         setLoading(false);
       }
     };
+
     fetchUserDetails();
   }, [username, navigate]);
 
   const handleLogout = () => {
-    localStorage.removeItem("token"); // Clear the token from local storage
-    navigate("/login"); // Redirect to the login page
+    localStorage.removeItem("token");
+    navigate("/login");
   };
 
   if (loading) {
@@ -72,7 +73,8 @@ const UserPage = () => {
   if (!userDetails) {
     return <div>User not found</div>;
   }
-  const registerIt = () => {
+
+  const toggleRegister = () => {
     setRegisterIt((prevState) => !prevState);
   };
 
@@ -92,14 +94,14 @@ const UserPage = () => {
         </ul>
         {isdoctor && (
           <ul>
-            <button onClick={registerIt}>Register User</button>
+            <button onClick={toggleRegister}>Register User</button>
           </ul>
         )}
         <button onClick={handleLogout}>Logout</button>
       </div>
       {isdoctor && <h1 className="small-padding-top">Doctor Dashboard</h1>}
       {isreceptionist && <h1>Receptionist Dashboard</h1>}
-      <div className="center-row ">
+      <div className="center-row">
         {isdoctor && (
           <div className="dash-component">
             <PatientList />
@@ -111,11 +113,6 @@ const UserPage = () => {
         {isreceptionist && (
           <div className="center-row">
             <PatientList />
-            {/* //   <nav className="center-row small-width menu">
-          //     <ul>Add Patient</ul>
-          //     <ul>Modify Patient Details</ul>
-          //     <ul>List all Patients</ul>
-          //   </nav>*/}
             <PatientForm />
           </div>
         )}
