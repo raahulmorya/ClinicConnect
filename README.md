@@ -46,6 +46,9 @@ cd ClinicConnect
 ```bash
 
 npm install
+cd client
+npm install
+cd ..
 
 ```
 
@@ -95,5 +98,11 @@ Add Prescription: POST /api/patients/:patientId/prescription
 - **Styling**: CSS
 
 
-  ##Screenshots
-  ![Screenshot](screenshots/home.png)
+  ## Screenshots
+  ![Home](screenshots/home.png)
+   ![Login](screenshots/login.png)
+   ![Doctor](screenshots/doctor.png)
+   ![Receptionist](screenshots/receptionist.png)
+   ![Register](screenshots/register.png)
+   ![MongoDB database](screenshots/mongouser.png)
+   ![](screenshots/mongopatient.png)
