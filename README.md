@@ -14,15 +14,28 @@
  
  
 ## Installation 
+
+### Prerequisites
+
+- Node.js and npm
+- MongoDB
+- 
  1. **Clone the repository:**
      ```bash
-      git clone https://github.com/your-username/ClinicConnect.git
+     git clone https://github.com/your-username/ClinicConnect.git
      cd ClinicConnect```
-- **Install dependencies:**
+ 2.**Install dependencies:**
     ```bash
     npm install
     ```
-    
+ 3. **Set up environment variables**
+
+   Create a .env file in the root directory and add the following:
+   ```env
+   MONGODB_URI=your_mongodb_uri
+   JWT_SECRET=your_jwt_secret```
+   ```
+ 
 - **Start the development server:**
     
    ```bash
@@ -31,13 +44,15 @@
     
     The app will be available at http://localhost:3000.
   
-## API Endpoints
+   ##API Endpoints
+     Create Patient: POST /api/patients
+     Get Patient: GET /api/patients/:patientId
+     Add Prescription: POST /api/patients/:patientId/prescription
 
-- **GET /api/patients/
-    **: Fetch details of a patient by their ID.
-- **POST /api/patients/
-    /prescription**: Add a prescription to a patient's record (Doctor-only).
-    
+
+
+
+
 ## Technology Stack
 
 - **Frontend**: React, React Router
