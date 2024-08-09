@@ -14,7 +14,10 @@
  
  
 ## Installation 
- 1. **Clone the repository:** ```bash git clone https://github.com/your-username/ClinicConnect.git cd ClinicConnect
+ 1. **Clone the repository:**
+     ```bash
+      git clone https://github.com/your-username/ClinicConnect.git
+     cd ClinicConnect```
 - **Install dependencies:**
     ```bash
     npm install
