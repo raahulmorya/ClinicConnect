@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const PatientList = () => {
   const [patients, setPatients] = useState([]);
@@ -8,7 +9,7 @@ const PatientList = () => {
   useEffect(() => {
     const fetchPatients = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/api/patients');
+        const response = await axios.get(`${apiBaseUrl}/api/patients`);
         setPatients(response.data);
       } catch (err) {
         setError(err.message);

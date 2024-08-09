@@ -1,18 +1,18 @@
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 import React, { useState } from "react";
 import axios from "axios";
 import "../css/login.css";
-
 
 const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
   const [message, setMessage] = useState("");
-  
+
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3001/auth/register", {
+      const response = await axios.post(`${apiBaseUrl}/auth/register`, {
         username,
         password,
         role,
@@ -56,6 +56,6 @@ const Register = () => {
       {message && <p>{message}</p>}
     </div>
   );
-}
+};
 
 export default Register;

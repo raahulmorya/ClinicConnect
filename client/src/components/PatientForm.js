@@ -1,4 +1,5 @@
 // src/components/PatientForm.js
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 import React, { useState } from "react";
 import axios from "axios";
 import "./PatientForm.css"; // Add your CSS file for styling
@@ -27,7 +28,7 @@ const PatientForm = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3001/api/patients",
+        `${apiBaseUrl}/api/patients`,
         patient
       );
       setMessage("Patient added successfully");

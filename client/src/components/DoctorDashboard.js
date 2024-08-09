@@ -1,5 +1,5 @@
 // src/components/DoctorDashboard.js
-
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -17,7 +17,7 @@ const DoctorDashboard = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.get(`http://localhost:3001/api/patients/${patientId}`);
+      const response = await axios.get(`${apiBaseUrl}/api/patients/${patientId}`);
       setPatient(response.data.patient);
       setMessage('');
     } catch (error) {
@@ -33,7 +33,7 @@ const DoctorDashboard = () => {
     console.log(`${token}`);
     try {
       const response = await axios.post(
-        `http://localhost:3001/api/patients/${patientId}/prescription`,
+        `${apiBaseUrl}/api/patients/${patientId}/prescription`,
         { prescription },
         {
           headers: { Authorization: `Bearer ${token}` },

@@ -1,4 +1,5 @@
 // Login.js
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -16,7 +17,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3001/auth/login", {
+      const response = await axios.post(`${apiBaseUrl}/auth/login`, {
         username,
         password,
         role,

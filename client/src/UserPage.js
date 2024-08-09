@@ -1,4 +1,4 @@
-
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
@@ -25,7 +25,7 @@ const UserPage = () => {
       console.log(`${token}`);
       try {
         const response = await axios.get(
-          `http://localhost:3001/auth/user/${username}`,
+          `${apiBaseUrl}/auth/user/${username}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -37,9 +37,6 @@ const UserPage = () => {
         if (response.data.role === "receptionist") {
           setIsReceptionist(true);
         }
-
-
-       
       } catch (error) {
         console.error("Error fetching user details:", error);
         if (error.response && error.response.status === 403) {
@@ -76,7 +73,8 @@ const UserPage = () => {
     return <div>User not found</div>;
   }
   const registerIt = () => {
- setRegisterIt((prevState) => !prevState);  }
+    setRegisterIt((prevState) => !prevState);
+  };
 
   return (
     <div id="userpage">
@@ -127,4 +125,3 @@ const UserPage = () => {
 };
 
 export default UserPage;
-
