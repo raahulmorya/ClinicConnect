@@ -93,3 +93,7 @@ Add Prescription: POST /api/patients/:patientId/prescription
 - **Authentication**: JWT (JSON Web Token)
 
 - **Styling**: CSS
+
+
+  ##Screenshots
+  ![Screenshot](screenshots/home.png)
